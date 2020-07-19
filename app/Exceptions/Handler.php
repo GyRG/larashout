@@ -50,7 +50,7 @@ class Handler extends ExceptionHandler
         return parent::render($request, $exception);
     }
 
-    /**
+/**
  * @param \Illuminate\Http\Request $request
  * @param AuthenticationException $exception
  * @return \Illuminate\Http\JsonResponse|\Illuminate\Http\RedirectResponse|\Symfony\Component\HttpFoundation\Response

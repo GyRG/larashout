@@ -2,14 +2,16 @@
 
 namespace App\Http\Controllers\Admin;
 
+use Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 class LoginController extends Controller
-{
+{  
     use AuthenticatesUsers;
-    use Auth;
+
+    
 
     /**
     *A donde redirigir admis después del login
