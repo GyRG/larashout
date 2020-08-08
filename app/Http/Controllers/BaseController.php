@@ -48,6 +48,24 @@ protected function responseJson($error = true, $responseCode = 200, $message = [
     ]);
 }
 
+/**
+ * @param $route
+ * @param $message
+ * @param string $type
+ * @param bool $error
+ * @param bool $withOldInputWhenError
+ * @return \Illuminate\Http\RedirectResponse
+ */
+protected function responseRedirect($route, $message, $type = 'info', $error = false, $withOldInputWhenError = false)
+{
+    $this->setFlashMessage($message, $type);
+    $this->showFlashMessages();
 
+    if ($error && $withOldInputWhenError) {
+        return redirect()->back()->withInput();
+    }
+
+    return redirect()->route($route);
+}
 
 }
