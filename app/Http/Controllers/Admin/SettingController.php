@@ -27,6 +27,9 @@ public function index()
  */
 public function update(Request $request)
 {
+    // if there is a logo update, then check if the logo is set using the config('settings.site_logo) helper function
+    // if there is a logo delete it and upload the new one and set it.
+   // Same thing for the favicon.
     if ($request->has('site_logo') && ($request->file('site_logo') instanceof UploadedFile)) {
 
         if (config('settings.site_logo') != null) {
@@ -44,6 +47,8 @@ public function update(Request $request)
         Setting::set('site_favicon', $favicon);
 
     } else {
+        // Load all settings values submitted through the form (except the site_logo and site_favicon)
+        // Loop through all the settings keys and set the value to whatever submitted using the form.
 
         $keys = $request->except('_token');
 
