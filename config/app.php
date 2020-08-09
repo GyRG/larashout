@@ -146,7 +146,7 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-        Illuminate\Support\ServiceProvider::class,
+        Illuminate\Providers\SettingServiceProvider::class,
 
         /*
          * Package Service Providers...
