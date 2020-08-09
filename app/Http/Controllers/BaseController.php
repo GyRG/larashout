@@ -9,17 +9,17 @@ class BaseController extends Controller
 {
     use FlashMessages;
 
-    protected $data = $null;
+    protected $data = null;
 
     /**
      * @param $title
      * @param $subTitle
      */
 
-     protected function setPageTitle($title, $subTitle)
-     {
-         view()->share(['pageTitle' => $title, 'subTitle' => $subTitle]);
-     }
+    protected function setPageTitle($title, $subTitle)
+    {
+        view()->share(['pageTitle' => $title, 'subTitle' => $subTitle]);
+    }
     //
     /**
  * @param int $errorCode
